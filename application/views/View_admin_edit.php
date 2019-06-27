@@ -20,7 +20,7 @@
             if (count($status)) {
               foreach ($status as $data) {
                 if($status==$data['status']){
-                  echo "<option selected value='".$data['status']."'>".$data['nmstatus']."</option>";
+                  echo "<option value='".$data['status']."' selected>".$data['nmstatus']."</option>";
                 }else{
                   echo "<option value='".$data['status']."'>".$data['nmstatus']."</option>";
                 }
