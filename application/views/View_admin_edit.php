@@ -17,15 +17,14 @@
     <div class="col-sm-10">
       <select name="status" id="status" class="custom-select mr-sm-2">
           <?php
-            if (count($status)) {
               foreach ($status as $data) {
-                if($status==$data['status']){
+                if($dataadm->status==$data['status']){
                   echo "<option value='".$data['status']."' selected>".$data['nmstatus']."</option>";
                 }else{
                   echo "<option value='".$data['status']."'>".$data['nmstatus']."</option>";
                 }
               }
-            }
+            
           ?>
         </select>
     </div>
