@@ -1,13 +1,12 @@
  <!-- Begin Page Content -->
-        <div class="container-fluid">
+<div class="container-fluid">
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+<div class="card-header py-3">
+  <h6 class="m-0 font-weight-bold text-primary">Form Input Operator</h6>
+</div>
 
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Form Input Operator</h6>
-            </div>
-            <div class="card-body">
-
+<div class="card-body">
 <form method="post" action="<?php echo base_url('index.php/operator/action')?>">
   <div class="form-group row">
     <label for="nrp" class="col-sm-2 col-form-label">Username</label>
@@ -16,7 +15,7 @@
     </div>
   </div>
 
-<div class="form-group row">
+  <div class="form-group row">
     <label for="nrp" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm-10">
       <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required">

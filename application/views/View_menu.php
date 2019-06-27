@@ -84,7 +84,7 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('index.php/ganti-password'); ?>">
+        <a class="nav-link" href="<?php echo base_url('index.php/ganti_password'); ?>">
           <i class="menu-icon fa fa-unlock-alt"></i>
           <span>Ganti Password</span></a>
       </li>
