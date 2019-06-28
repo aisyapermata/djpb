@@ -17,18 +17,19 @@
 
 <form method="post" action="<?php echo base_url('index.php/ganti_password/update')?>">
   <div class="form-group row">
-    <label for="password1" class="col-sm-2 col-form-label">Password Baru</label>
+    <label for="password1" class="col-sm-3 col-form-label">Password Baru</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="password1" name="password1" placeholder="Password Baru" required="required">
+      <input type="password" class="form-control" id="password1" name="password1" required="required">
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="password2" class="col-sm-2 col-form-label">Konfirmasi Password Baru</label>
+    <label for="password2" class="col-sm-3 col-form-label">Konfirmasi Password Baru</label>
     <div class="col-sm-10">
-      <input type="password2" class="form-control" id="password2" name="password2" placeholder="Konfirmasi Password Baru" required="required">
+      <input type="password" class="form-control" id="password2" name="password2" required="required">
     </div>
   </div>
+
 
   <div class="form-group row">
     <div class="col-sm-10">

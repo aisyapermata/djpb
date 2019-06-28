@@ -43,7 +43,7 @@
                     <td><?php echo $datarpt->tgl_rapat; ?></td>
                     <td><?php echo $datarpt->keterangan; ?></td>
                     <td><?php echo $datarpt->nmstatus; ?></td>
-                    <td><a href="<?php echo $datarpt->link_url ?>" target="_blank"><?php echo $datarpt->link_url ?></a></td>
+                    <td><a href="<?php echo $datarpt->link_url ?>" target="_blank">LINK</a></td>
                     <td><?php echo $datarpt->kdgroup; ?></td>
            					<td>
            						<a href="<?php echo base_url('index.php/rapat/edit/').$datarpt->rapat_id; ?>" class="btn btn-warning"> Edit </a>  

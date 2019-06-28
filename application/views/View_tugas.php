@@ -43,7 +43,7 @@
                     <td><?php echo $datatgs->tgl_deadline; ?></td>
                     <td><?php echo $datatgs->keterangan; ?></td>
                     <td><?php echo $datatgs->nmstatus; ?></td>
-                    <td><a href="<?php echo $datatgs->link_url ?>" target="_blank"><?php echo $datatgs->link_url ?></a></td>
+                    <td><a href="<?php echo $datatgs->link_url ?>" target="_blank">LINK</a></td>
                     <td><?php echo $datatgs->keterangan; ?></td>
            					<td>
            						<a href="<?php echo base_url('index.php/tugas/edit/').$datatgs->task_id; ?>" class="btn btn-warning"> Edit </a>  
