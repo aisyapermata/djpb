@@ -9,7 +9,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('index.php/admin'); ?>">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <i class="far fa-laugh-wink"></i>
         </div>
         <div class="sidebar-brand-text mx-3">D J P b
           <!-- tanda pangkat -->

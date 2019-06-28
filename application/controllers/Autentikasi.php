@@ -16,7 +16,7 @@ class Autentikasi extends CI_Controller {
 		$data 			= array();
 		$error 			= empty($this->session->flashdata('error'))?"":$this->session->flashdata('error');
 		$data["error"] 	= $error;
-		$this->load->view('Autentikasi_view');
+		$this->load->view('Autentikasi_view', $data);
 	}
 
 	public function login()
@@ -29,16 +29,16 @@ class Autentikasi extends CI_Controller {
 		if($result["valid_user"]){
 			$user = $result["data_user"];
 
-		$data_session = array(
+			$data_session = array(
 			'nip'=>$user->nip
-		);
+			);
 
-		$this->session->set_userdata($data_session);
+			$this->session->set_userdata($data_session);
 
 		redirect(base_url("index.php/Admin"));
 		}
 		else{
-			$this->session->set_flashdata('error',"NIP dan Password yang Anda masukkan tidak ditemukan");
+			$this->session->set_flashdata('error',"Username dan Password yang Anda masukkan tidak ditemukan");
 			redirect(base_url());
 		}
 	}

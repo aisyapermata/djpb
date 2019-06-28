@@ -26,7 +26,7 @@
   <div class="form-group row">
     <label for="password2" class="col-sm-2 col-form-label">Konfirmasi Password Baru</label>
     <div class="col-sm-10">
-      <input type="password2" class="form-control" id="password2" name="password2" placeholder="Konfirmasi Password" required="required">
+      <input type="password2" class="form-control" id="password2" name="password2" placeholder="Konfirmasi Password Baru" required="required">
     </div>
   </div>
 

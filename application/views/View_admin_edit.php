@@ -33,7 +33,7 @@
   <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Simpan</button>
-      <button type="reset" class="btn btn-danger">Batal</button>
+      <button type="reset" class="btn btn-danger">Reset</button>
     </div>
   </div>
 

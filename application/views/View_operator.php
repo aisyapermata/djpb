@@ -17,14 +17,14 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Username</th>
-                                    <th>Nama</th>
-                                    <th>KPPN</th>
-                                    <th>Status</th>
-                                    <th>Email</th>
-                                    <th>No. HP</th>
-                                    <th>Aksi</th>
+                                    <td>No</td>
+                                    <td>Username</td>
+                                    <td>Nama</td>
+                                    <td>KPPN</td>
+                                    <td>Status</td>
+                                    <td>Email</td>
+                                    <td>No. HP</td>
+                                    <td>Aksi</td>
                                 </tr>
                             </thead>
 
@@ -35,12 +35,12 @@
                             $no++; ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
-                                <td><?php echo $dataopr->useropr ?></td>
-                                <td><?php echo $dataopr->nmopr ?></td>
-                                <td><?php echo $dataopr->nmkppn ?></td>
-                                <td><?php echo $dataopr->nmstatus ?></td>
-                                <td><?php echo $dataopr->email ?></td>
-                                <td><?php echo $dataopr->nohp ?></td>
+                                <td><?php echo $dataopr->useropr; ?></td>
+                                <td><?php echo $dataopr->nmopr; ?></td>
+                                <td><?php echo $dataopr->nmkppn; ?></td>
+                                <td><?php echo $dataopr->nmstatus; ?></td>
+                                <td><?php echo $dataopr->email; ?></td>
+                                <td><?php echo $dataopr->nohp; ?></td>
                                 <td>
                                 <a href="<?php echo base_url('index.php/operator/edit/'.$dataopr->useropr); ?>" class="btn btn-warning btn-icon-split btn-sm">
                                     <span class="icon text-white">  
@@ -58,7 +58,6 @@
                             </tr>
                             <?php } ?>
                         </tbody>
-                    
                         </table>
                     </div>
                 </div>

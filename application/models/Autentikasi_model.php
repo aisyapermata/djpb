@@ -56,7 +56,7 @@ class Autentikasi_model extends CI_Model {
 
 	public function update_password($nip,$password) 
 	{
-		$this->db->set('password', $password);
+		$this->db->set('passw', $password);
 		$this->db->where('nip', $nip);
 		$this->db->update('t_admin');
 	
