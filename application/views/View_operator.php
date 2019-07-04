@@ -8,7 +8,6 @@
             </div>
             <div class="card-body">
               <!-- button -->
-                    <!-- button -->
                 <a href="<?php echo base_url('index.php/operator/add');?>" class="btn btn-primary">Tambah</a>
                   <br>
                   <br>
@@ -17,14 +16,15 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <td>No</td>
-                                    <td>Username</td>
-                                    <td>Nama</td>
-                                    <td>KPPN</td>
-                                    <td>Status</td>
-                                    <td>Email</td>
-                                    <td>No. HP</td>
-                                    <td>Aksi</td>
+                                    <th>No</th>
+                                    <th>Username</th>
+                                    <th>Nama</th>
+                                    <th>Kode KPPN</th>
+                                    <th>Nama KPPN</th>
+                                    <th>Status</th>
+                                    <th>Email</th>
+                                    <th>No. HP</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
 
@@ -35,29 +35,31 @@
                             $no++; ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
-                                <td><?php echo $dataopr->useropr; ?></td>
-                                <td><?php echo $dataopr->nmopr; ?></td>
-                                <td><?php echo $dataopr->nmkppn; ?></td>
-                                <td><?php echo $dataopr->nmstatus; ?></td>
-                                <td><?php echo $dataopr->email; ?></td>
-                                <td><?php echo $dataopr->nohp; ?></td>
+                                <td><?php echo $dataopr->useropr ?></td>
+                                <td><?php echo $dataopr->nmopr ?></td>
+                                <td><?php echo $dataopr->kdkppn ?></td>
+                                <td><?php echo $dataopr->nmkppn ?></td>
+                                <td><?php echo $dataopr->nmstatus ?></td>
+                                <td><?php echo $dataopr->email ?></td>
+                                <td><?php echo $dataopr->nohp ?></td>
                                 <td>
-                                <a href="<?php echo base_url('index.php/operator/edit/'.$dataopr->useropr); ?>" class="btn btn-warning btn-icon-split btn-sm">
+                                  <a href="<?php echo base_url('index.php/operator/edit/'.$dataopr->useropr); ?>" class="btn btn-warning btn-icon-split">
                                     <span class="icon text-white">  
                                       <i class="fa fa-edit"></i>
                                     </span>
                                     <span class="text">Edit</span>
-                                </a>
-                                <a href="<?php echo base_url('index.php/operator/delete/'.$dataopr->useropr); ?>" class="btn btn-danger btn-icon-split btn-sm" onclick="return confirm('Apakah Anda yakin akan menghapus <?php echo $dataopr->useropr; ?> ?')">
+                                  </a>  
+                                  <a href="<?php echo base_url('index.php/operator/delete/'.$dataopr->useropr); ?>" class="btn btn-danger btn-icon-split" onclick="return confirm('Apakah Anda yakin akan menghapus <?php echo $dataopr->useropr; ?> ?')">
                                     <span class="icon text-white">
-                                      <i class="fa fa-trash-o"></i>
+                                      <i class="far fa-trash-alt"></i>
                                     </span>
                                     <span class="text">Delete</span>
-                                </a>
+                                  </a>
                                 </td>
                             </tr>
                             <?php } ?>
                         </tbody>
+                    
                         </table>
                     </div>
                 </div>

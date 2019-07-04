@@ -1,17 +1,16 @@
 <?php
-
 class Umum_model extends CI_Model{
 	//membuat fungsi
-	function take(){
-		$this->db->select('*');
-		$this->db->from('t_umum');
-		$this->db->join('ref_umum','ref_umum.jenis=t_umum.jenis');
-		$this->db->join('ref_status','ref_status.status=t_umum.status');
-		$this->db->join('ref_group','ref_group.group=t_umum.kdgroup');
-		$this->db->join('ref_kppn_jatim','ref_kppn_jatim.kdkppn=t_umum.kdkppn');
-		$this->db->join('t_useropr','t_useropr.useropr=t_umum.useropr');
+	function take($idJenis){
+		$this->db->select('*, u.keterangan as isi');
+		$this->db->from('t_umum as u');
+		$this->db->join('ref_umum as ru','ru.jenis=u.jenis');
+		$this->db->join('ref_status as rs','rs.status=u.status');
+		$this->db->join('ref_group as rg','rg.group=u.kdgroup');
+		$this->db->join('ref_kppn_jatim as rkj','rkj.kdkppn=u.kdkppn');
+		$this->db->join('t_useropr as rus','rus.useropr=u.useropr');
+		$this->db->where('u.jenis='.$idJenis);
 		$query=$this->db->get();
-
 		return $query;
 	}
 
@@ -40,7 +39,6 @@ class Umum_model extends CI_Model{
 	// function data_kppn(){
 	// 	$data=array();
 	// 	$query=$this->db->get('ref_kppn_jatim');
-
 	// 	if ($query->num_rows()>0) {
 	// 		foreach ($query->result_array() as $row) {
 	// 			$data[]=$row;;
@@ -49,8 +47,6 @@ class Umum_model extends CI_Model{
 	// 	$query->free_result();
 	// 	return $data;
 	// }
-
-
 }
 
 ?>

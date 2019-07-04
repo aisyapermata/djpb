@@ -36,7 +36,6 @@ class Operator_model extends CI_Model{
 	function status(){
 		$data=array();
 		$query=$this->db->get('ref_status');
-
 		if ($query->num_rows()>0) {
 			foreach ($query->result_array() as $row) {
 				$data[]=$row;;

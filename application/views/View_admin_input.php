@@ -40,8 +40,9 @@
 
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Simpan</button>
+      <button type="submit" class="btn btn-success">Simpan</button>
       <button type="reset" class="btn btn-danger">Reset</button>
+      <a href="<?php echo base_url('index.php/admin') ?>" class="btn btn-secondary">Batal</a>
     </div>
   </div>
 </form>

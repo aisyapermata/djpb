@@ -2,6 +2,12 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
+<div class="card shadow mb-4">
+<div class="card-header py-3">
+  <h6 class="m-0 font-weight-bold text-primary">Form Edit Admin</h6>
+</div>
+
+<div class="card-body">
 <?php foreach($admin as $dataadm){ $nip=$dataadm->nip; ?>
 <form method="post" action="<?php echo base_url('index.php/admin/update') ?>">
 <input type="hidden" id="nip" name="nip" value="<?php echo $dataadm->nip; ?>">
@@ -33,7 +39,7 @@
   <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Simpan</button>
-      <button type="reset" class="btn btn-danger">Reset</button>
+      <a href="<?php echo base_url('index.php/admin') ?>" class="btn btn-secondary">Batal</a>
     </div>
   </div>
 

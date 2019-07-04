@@ -4,12 +4,12 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" >
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('index.php/admin'); ?>">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="far fa-laugh-wink"></i>
+          <i class="fab fa-dochub"></i>
         </div>
         <div class="sidebar-brand-text mx-3">D J P b
           <!-- tanda pangkat -->
@@ -17,14 +17,14 @@
           </div>
       </a>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
 
-      
+      <?php if ($this->session->userdata('is_admin')) { ?>
+              <!-- Divider -->
+      <hr class="sidebar-divider my-0">
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
+      
       <!-- Heading -->
       <div class="sidebar-heading">
         Data Master
@@ -39,9 +39,20 @@
         <!-- Nav item - Master operator -->
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('index.php/operator'); ?>">
-          <i class="menu-icon fa fa-users"></i></i>
+          <i class="menu-icon fa fa-users"></i>
           <span>Master Operator</span></a>
       </li>
+
+    <?php } 
+
+    else { ?>
+
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
       <!-- Heading -->
       <div class="sidebar-heading">
@@ -51,21 +62,22 @@
         <!-- Nav Item - Umum -->
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('index.php/umum'); ?>">
-          <i class="fa fa-bank"></i>
+          <i class="fas fa-university"></i>
           <span>Umum</span></a>
       </li>
         <!-- Nav item - Rapat -->
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('index.php/rapat'); ?>">
-          <i class="fa fa-calendar"></i>
+          <i class="far fa-calendar-alt"></i>
           <span>Rapat</span></a>
       </li>
       <!-- Nav item - Tugas -->
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('index.php/tugas'); ?>">
-          <i class="fa fa-tasks"></i>
+          <i class="fas fa-tasks"></i>
           <span>Tugas</span></a>
       </li>
+    <?php }?>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -75,12 +87,14 @@
         Pengaturan
       </div>
 
+      <?php if (!$this->session->userdata('is_admin')) { ?>
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('index.php/edit-profil'); ?>">
+        <a class="nav-link" href="<?php echo base_url('index.php/profil'); ?>">
           <i class="menu-icon fa fa-edit"></i>
           <span>Edit Profil</span></a>
       </li>
+      <?php } ?>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -92,7 +106,7 @@
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('index.php/autentikasi/logout'); ?>">
-          <i class="fmenu-icon fa fa-sign-out"></i>
+          <i class="fas fa-sign-out-alt"></i>
           <span>Logout</span></a>
       </li>
 
@@ -121,8 +135,11 @@
             <i class="fa fa-bars"></i>
           </button>
 
+        <!-- Label Welcome -->
+<!--         <label style="color:white"> User: <?php //echo $this->session->userdata('username'); ?> </label> -->
+
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -131,18 +148,18 @@
                 </button>
               </div>
             </div>
-          </form>
+          </form> -->
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
+            <!-- <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
-              </a>
+              </a> -->
               <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+              <!-- <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -154,17 +171,17 @@
                   </div>
                 </form>
               </div>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
+            <!-- <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
+                <i class="fas fa-bell fa-fw"></i> -->
                 <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
+                <!-- <span class="badge badge-danger badge-counter">3+</span>
+              </a> -->
               <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+              <!-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
                   Alerts Center
                 </h6>
@@ -203,17 +220,17 @@
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
+            <!-- <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
+                <i class="fas fa-envelope fa-fw"></i> -->
                 <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
+                <!-- <span class="badge badge-danger badge-counter">7</span>
+              </a> -->
               <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+              <!-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
                   Message Center
                 </h6>
@@ -259,15 +276,15 @@
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
               </div>
-            </li>
+            </li> -->
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                <!-- <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -290,6 +307,8 @@
                 </a>
               </div>
             </li>
+
+            <!--  -->
 
           </ul>
 

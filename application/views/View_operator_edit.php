@@ -2,6 +2,12 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
+<div class="card shadow mb-4">
+<div class="card-header py-3">
+  <h6 class="m-0 font-weight-bold text-primary">Form Edit Operator</h6>
+</div>
+
+<div class="card-body">
 <?php foreach($operator as $dataopr){ $useropr=$dataopr->useropr; ?>
 <form method="post" action="<?php echo base_url('index.php/operator/update') ?>">
 <input type="hidden" id="useropr" name="useropr" value="<?php echo $dataopr->useropr; ?>">
@@ -75,6 +81,7 @@
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Simpan</button>
       <button type="reset" class="btn btn-danger">Reset</button>
+      <a href="<?php echo base_url('index.php/operator') ?>" class="btn btn-secondary">Batal</a>
     </div>
   </div>
 

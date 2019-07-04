@@ -8,9 +8,7 @@
             </div>
             <div class="card-body">
               <!-- button -->
-                    <button type="submit" class="btn btn-primary">
-                      Tambah
-                    </button>
+                <a href="<?php echo base_url('index.php/tugas/add');?>" class="btn btn-primary">Tambah</a>
                   <br>
                   <br>
 
@@ -43,11 +41,21 @@
                     <td><?php echo $datatgs->tgl_deadline; ?></td>
                     <td><?php echo $datatgs->keterangan; ?></td>
                     <td><?php echo $datatgs->nmstatus; ?></td>
-                    <td><a href="<?php echo $datatgs->link_url ?>" target="_blank">LINK</a></td>
+                    <td><a href="<?php echo $datatgs->link_url ?>" target="_blank"><?php echo $datatgs->link_url ?></a></td>
                     <td><?php echo $datatgs->keterangan; ?></td>
            					<td>
-           						<a href="<?php echo base_url('index.php/tugas/edit/').$datatgs->task_id; ?>" class="btn btn-warning"> Edit </a>  
-                      <a href="<?php echo base_url('index.php/tugas/hapus/').$datatgs->task_id; ?>" class="btn btn-danger">Delete</a>
+                      <a href="<?php echo base_url('index.php/tugas/edit/'.$datatgs->task_id); ?>" class="btn btn-warning btn-icon-split">
+                        <span class="icon text-white">  
+                          <i class="fa fa-edit"></i>
+                        </span>
+                        <span class="text">Edit</span>
+                      </a>  
+                      <a href="<?php echo base_url('index.php/tugas/delete/'.$datatgs->task_id); ?>" class="btn btn-danger btn-icon-split" onclick="return confirm('Apakah Anda yakin akan menghapus <?php echo $datatgs->task_id; ?> ?')">
+                        <span class="icon text-white">
+                          <i class="far fa-trash-alt"></i>
+                        </span>
+                        <span class="text">Delete</span>
+                      </a>
                     </td>
                   </tr>
                     	<?php } ?>
@@ -60,7 +68,3 @@
   </div>
 </div>
 </div>
-      
-
-
-    

@@ -1,4 +1,4 @@
- <!-- Begin Page Content -->
+<!-- Begin Page Content -->
 <div class="container-fluid">
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -77,6 +77,7 @@
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Simpan</button>
       <button type="reset" class="btn btn-danger">Reset</button>
+      <a href="<?php echo base_url('index.php/operator') ?>" class="btn btn-secondary">Batal</a>
     </div>
   </div>
 </form>

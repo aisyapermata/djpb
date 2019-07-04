@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Autentikasi extends CI_Controller {
-
 	public function __construct() 
 	{
 		parent::__construct();
@@ -10,7 +8,6 @@ class Autentikasi extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model("Autentikasi_model");
 	}
-
 	public function index()
 	{
 		$data 			= array();
@@ -18,31 +15,33 @@ class Autentikasi extends CI_Controller {
 		$data["error"] 	= $error;
 		$this->load->view('Autentikasi_view', $data);
 	}
-
 	public function login()
 	{
 		$nip = $this->input->post('username');
 		$password = $this->input->post('password');
-
-		$result = $this->Autentikasi_model->cek_autentikasi_adm($nip, md5($password));
-
+		$result = $this->Autentikasi_model->cek_autentikasi($nip, md5($password));
 		if($result["valid_user"]){
 			$user = $result["data_user"];
-
 			$data_session = array(
-			'nip'=>$user->nip
+			'id'=>$user->id,
+			'is_admin' => $result['is_admin']
 			);
-
 			$this->session->set_userdata($data_session);
 
-		redirect(base_url("index.php/Admin"));
+			if ($result['is_admin']) {
+				redirect(base_url("index.php/Admin"));
+			}
+			else{
+				redirect(base_url("index.php/Rapat"));
+			}
+		
+
 		}
 		else{
 			$this->session->set_flashdata('error',"Username dan Password yang Anda masukkan tidak ditemukan");
 			redirect(base_url());
 		}
 	}
-
 	public function logout()
 	{
 		$this->session->sess_destroy();
